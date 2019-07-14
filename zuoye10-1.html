@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,li{
+            margin: 0 ;
+            padding: 0;
+        }
+        .layout{
+            width: 800px;
+            margin: 0 auto;
+        }
+        .header h1{
+            color: #666;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .card {
+            margin-left: -10px;
+            list-style: none;
+        }
+        .card::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .hbody {
+            float: left;
+            margin-left: 10px;
+            margin-top: 30px;
+            width: 260px;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+        }
+        .hbody>img{
+            width: 100%;
+            opacity: 0.75;
+        }
+        .detail{
+            padding: 1px 16px;
+        }
+        .detail>p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="header">
+            <h1>风景列表</h1>
+        </div>
+        <ul class="card">
+            <li class="hbody">
+                <img src="http://cdn.jscode.me/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+                <div class="detail"><p>风景如画</p></div>
+            </li>
+            <li class="hbody">
+                <img src="http://cdn.jscode.me/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+                <div class="detail"><p>风景如画</p></div>
+            </li>
+            <li class="hbody">
+                <img src="http://cdn.jscode.me/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+                <div class="detail"><p>风景如画</p></div>
+            </li>
+            <li class="hbody">
+                <img src="http://cdn.jscode.me/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+                <div class="detail"><p>风景如画</p></div>
+            </li>
+            <li class="hbody">
+                <img src="http://cdn.jscode.me/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+                <div class="detail"><p>风景如画</p></div>
+            </li>
+            <li class="hbody">
+                <img src="http://cdn.jscode.me/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+                <div class="detail"><p>风景如画</p></div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
