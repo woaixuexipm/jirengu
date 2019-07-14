@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>通知</title>
+    <style>
+        .layout {
+            width: 600px;
+            margin: 0 auto;
+        }
+        .box1{
+            margin-top: 30px;
+            background: #4CAF50;
+            color: #fff;
+            padding: 1px 16px;
+            line-height: 1.5;
+            border-radius: 3px;
+        }
+        .box2{
+            margin-top: 30px;
+            background: #2196F3;
+            color: #fff;
+            padding: 1px 16px;
+            line-height: 1.5;
+            border-radius: 3px;
+        }
+        .box3{
+            margin-top: 30px;
+            background: #F44336;
+            color: #fff;
+            padding: 1px 16px;
+            line-height: 1.5;
+            border-radius: 3px;
+        }
+        .box4{
+            margin-top: 30px;
+            background: #FF9800;
+            color: #fff;
+            padding: 1px 16px;
+            line-height: 1.5;
+            border-radius: 3px;
+        }
+        .box2::after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+        .box3::after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+        .box4::after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+        a{
+            display: block;
+            float: right;
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        h2{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="box1">
+            <a href="#">×</a>
+            <h2>恭喜你</h2>
+            <p>获得本周学霸，继续加油吧</p>
+        </div>
+        <div class="box2">
+            <a href="#">×</a>
+            <h2>通知</h2>
+            <p>晚上上课，不要忘了</p>
+        </div>
+        <div class="box3">
+            <a href="#">×</a>
+            <h2>天啊</h2>             
+            <p>竟然几天没做任务</p>
+        </div>
+        <div class="box4">
+            <a href="#">×</a>
+            <h2>警告</h2>             
+            <p>学如逆水行舟，不进则退</p>
+        </div>
+    </div>
+</body>
+</html>
