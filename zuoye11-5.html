@@ -6,25 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        div#layout {    
-          height:400px;    
-          display:table;    
-        }    
-        div#box {    
-          vertical-align:middle;    
-          display:table-cell;    
-          border:1px solid #FF0099;    
-          background-color:#FFCCFF;    
-          width:760px;    
-       }    
+        .layout{
+            width: 800px;
+            background: #ccc;
+            margin: 0 auto;
+        }
+        .box{
+            text-align: center;
+            padding: 100px;
+        }
+        .button{
+            width: 80px;
+            height: 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            background: red;
+            color: #fff; 
+              
+        }
     </style>
 </head>
 <body>
-    <div id="layout">
-        <div id="box">
-        <h2>这是标题</h2>
-        <p>这是内容，这段文字在当前区块内垂直水平居中</p>
+    <div class="layout">
+        <div class="box">
+        <button class="button">按钮1</button>
+        <button class="button">按钮2</button>
+        <button class="button">按钮3</button>
     </div>
-</div>
+    </div>
 </body>
 </html>
