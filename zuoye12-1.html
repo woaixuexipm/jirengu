@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .tooltip {
+            position: relative;
+            width: 130px;
+            height: 65px;
+            border: 1px solid #888;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        .t1::before {
+            content: '';
+            width: 0px;
+            height: 0px;
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #888;
+            margin: 0;
+            position: absolute;
+            top: -20px;
+            left: 6px;
+        }
+        .t2::before {
+            content: '';
+            width: 0px;
+            height: 0px;
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid red;
+            margin: 0;
+            transform: rotateZ(45deg);
+            position: absolute;
+            top: -10px;
+            left: 120px;
+        } 
+        .t3::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-left: 1px solid #888;
+            border-top: 1px solid #888;
+            top:-6px;
+            transform: rotateZ(45deg);
+            position: absolute;
+            left: 6px;
+            background: white;
+        }   
+    </style>
+</head>
+<body>
+    <div class="tooltip t1"></div>
+    <div class="tooltip t2"></div>
+    <div class="tooltip t3"></div>
+</body>
+</html>
