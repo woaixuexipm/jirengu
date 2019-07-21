@@ -1,0 +1,351 @@
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+/*common css*/
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.btn {
+    display: inline-block;
+    font-size: 24px;
+    color: #fff;
+    padding: 15px 25px;
+    background: #68AACC;
+    opacity: 0.8;
+    border-radius: 16px;
+}
+.btn:hover {
+    background: #03678E;
+}
+body {
+    font: 14px/1.5 Arial;
+    color: #444;
+}
+.layout {
+    min-width: 400px;
+    margin: 0 auto;
+}
+header {
+    height: 100%;
+    min-height: 800px;
+    background: url(img/banner.jpg) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+header .logo {
+    display: inline-block;
+    padding: 15px 15px;
+    font-size: 32px;
+    font-family: 'Alex Brush';
+    color: #fff;
+}
+nav {
+    background: #68AACC;
+}
+header .navigation{
+    float: right;
+}
+header .navigation >li {
+    float: left;
+    margin: 10px 30px;
+}
+header .navigation a {
+    color: #fff;
+    font: 16px;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+}
+header .navigation a:hover{
+    background: #DBADF7;
+}
+header .introduction {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+header .introduction h2 {
+    font-size: 32px;
+    font-family: 'Alex Brush';
+}
+header .message {
+    width: 1200px;
+}
+header .banner {
+    float: left;
+    width: 33.33%;
+    padding: 20px 20px;
+}
+header .banner img {
+	border:2px solid #fff;
+	border-radius:100%;
+	margin:0 auto;
+}
+header .banner img:hover{
+    animation: btnAnimations 2s infinite linear;
+    -webkit-animation: btnAnimations 2s infinite linear;
+}
+/*动画过程*/
+@keyframes btnAnimations{
+    0%{
+        transform: translate(0,0) rotate(0deg);
+    }
+    50%{
+        transform: translate(0,-50px) rotate(50deg);
+    }
+    100%{
+        transform: translate(0,0) rotate(0deg);
+    }
+}
+/* 谷歌浏览器兼容性*/
+@-webkit-keyframes btnAnimations{
+    0%{
+        transform: translate(0,0) rotate(0deg);
+    }
+    50%{
+        transform: translate(0,-50px) rotate(50deg);
+    }
+    100%{
+        transform: translate(0,0) rotate(0deg);
+    }
+}
+header .banner h3 {
+	font-size: 32px;
+    color: #000;
+    margin: 1px 5px;
+}
+header .banner p {
+    font-size:14px;
+	color:#000;
+	line-height:1.8;
+	margin:0 auto;
+	width:100%;
+}
+header .introduction h1 {
+    font-size: 46px;
+    font-family: 'Alex Brush';
+}
+header .introduction .btn {
+    margin-top: 25px;
+}
+main section .location {
+    margin-top: 80px;
+    background: url(img/bg1.png) center no-repeat;
+    background-size: cover;
+}
+main section .location >img {
+    display: block;
+    float: right;
+    margin-right: 30px;
+}
+main section .location >h2 {
+    font-family: 'Alex Brush';
+    font-size: 32px;
+    margin: 20px 30px; 
+}
+main section .location >p {
+    color: #999;
+    margin: 50px 200px;
+}
+main section .location .btn {
+    margin-left: 400px;
+}
+main section .Honeymoon {
+    margin: 30px 20px;
+    background: url(img/bg1.png) center no-repeat;
+    background-size: cover;
+}
+main section .Honeymoon >img {
+    float: left;
+}
+main section .Honeymoon >h2 {
+    font-family: 'Alex Brush';
+    font-size: 32px;
+    margin-left: 80%;
+}
+main section .Honeymoon >p {
+    color: #999;
+    margin-left: 60%;
+    margin-top: 50px;
+}
+main section .Honeymoon .btn {
+    margin-left: 10%;
+    margin-top: 80px;
+}
+main .time-intro {
+    background: #F7F7F7;
+}
+main section h2 {
+    margin-top: 20px;
+    font-family: 'Alex Brush';
+    font-size: 32px;
+    text-align: center;
+}
+main section p {
+    color: #BF9FA5;
+    text-align: center;
+}
+main section .time figure {
+    float: left;
+    width: calc(33.33% - 200px);
+    margin: 10px 100px;
+}
+main section .time figure a {
+    display: block;
+    height: 280px;
+}
+main section .time figure a:hover {
+    opacity: 0.5;
+}
+main section .time a img {
+    width: 100%;
+    height: 100%;
+}
+main section .time figcaption {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+main section .time figure p { 
+    color: #999;
+    text-align: center;
+}
+main #history li:nth-child(odd) {
+    margin-top: 50px;
+    padding-right: calc(50% - 75px);
+    text-align: right;
+}
+main #history img {
+    width: 150px;
+    height: 150px;
+    float: right;
+    border-radius: 50%;
+    border: 3px solid #95C9E1;
+}
+main #history > li {
+    position: relative;
+}
+main #history > li::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    height: 56px;
+    margin-left: 0px;
+    display: inline-block;
+    width: 4px;
+    background-color: #A6C3DF;
+}
+main #history li:nth-child(odd) .history-intro {
+    margin-right: 180px; 
+}
+main #history li:nth-child(odd) img {
+    float: right;
+}
+main #history li:nth-child(even) {
+    margin-top: 50px;
+    padding-left: calc(50% - 75px);
+    text-align: left;
+}
+main #history li:nth-child(even) .history-intro {
+    margin-left: 180px; 
+}
+main #history li:nth-child(even) img {
+    float: left;
+}
+main #history li:nth-child(odd) p {
+    margin-left: 200px; 
+}
+main #history li:nth-child(even) p {
+    margin-right: 200px;
+}
+main section .history-end {
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 56px; 
+    padding: 42px;
+    border: 3px solid #95C9E1;
+    border-radius: 50%;
+    font-weight: bold;
+}
+main .term li {
+    width: calc(25% - 60px);
+    float: left;
+    margin:30px 30px;
+    text-align: center;
+}
+main .term li h3 {
+    font-size: 24px;
+    color: #5D6981;
+    margin-bottom: 20px;
+}
+main .term li p {
+    font-size: 18px;
+    color: #9FAAB8;
+    font-weight: 100;
+    line-height: 30px;
+    width: 95%;
+}
+main .term li a {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50%;
+    background: #73AFCF;
+    color: #fff;
+}
+main .term li a:hover {
+    background: #BF9FA5;
+}
+footer {
+    background: url(img/footer-bg.jpg) center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+}
+footer h2 {
+    font-size: 32px;
+    text-align: center;
+    padding-top: 100px;
+}
+footer form {
+    width: calc(50% - 20px);
+    margin: 0 auto;
+    border-radius: 5px;
+    height: 60%;
+}
+footer form input {
+    display: inline-block;
+    border: 1px solid #049EC4 ;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 20px;
+}
+footer form textarea {
+    float: right;
+    font-size: 14px;
+    margin-top: 10px;
+    border: 1px solid #049EC4 ;
+    border-radius: 5px;
+}
+footer .btn-footer {
+    display: block;
+    margin: 0 auto;
+}
