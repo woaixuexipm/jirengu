@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET','/login?username=jirengu&password=23456',true);
+        xhr.send();
+        xhr.addEventListener('load',function(){
+            console.log(xhr.status);
+            if((xhr.status>=200&&xhr.status<300)||xhr.status===304){
+                var data = xhr.responseText
+                console.log(data);
+            }else{
+                console.log('error');
+            }
+        })
+
+
+        var xh = new XMLHttpRequest();
+        xh.open('POST','/login',true);
+        xh.send('username=jirengu&password=23456');
+        xh.addEventListener('load',function(){
+            console.log(xh.status);
+            if((xh.status>=200&&xh.status<300)||xh.status===304){
+                var database = xh.responseText
+                console.log(database);
+            }else{
+                console.log('error');
+            }
+        })
+
+
+    </script>
+</body>
+</html>
