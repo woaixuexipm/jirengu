@@ -2,7 +2,6 @@
 ##### 1. 使用http创建静态web服务器
 ##### 2. 创建路由
 ##### 3. 设置路由
-然后创建服务器
 ```
 var http = require('http')
 var path = require('path')//处理URL
