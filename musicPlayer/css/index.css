@@ -1,0 +1,77 @@
+body {
+    height: 100%;
+}
+.background{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: url(20121125160403_a5feK.jpeg) center no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+}
+.musicbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    color: #443F3F;
+    font-family: cursive;
+    font-size: 16px;
+}
+.musicupper {
+    background-color: #C1A47F;
+    border: 1px solid #443F3F;
+    padding: 20px 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.musicupper .music .control {
+     float: left;
+     margin-top: 20px;
+}
+.musicupper .music .song {
+    float: right;
+    margin-right: 120px;
+    text-align: center;
+}
+.musicupper .process .bar {
+    position: relative;
+    width: 200px;
+    cursor: pointer;
+}
+.musicupper .process .bar .progress-bg {
+    position: absolute;
+    margin-top: 20px;
+    left: 10px;
+    height: 4px;
+    width: 200px;
+    margin-left: 0px;
+    display: inline-block;
+    background-color: rgb(119, 132, 145);
+}
+.musicupper .process .bar .progress-now {
+    position: absolute;
+    margin-top: 20px;
+    left: 10px;
+    height: 4px;
+    margin-left: 0px;
+    display: inline-block;
+    width: 0;
+    background-color: rgb(54, 125, 197);
+}
+.musicupper .process .time {
+    float: right;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+.musicbox .list > li {
+    border: 1px solid #443F3F;
+    padding: 5px 10px;
+}
+.musicbox .list > li:hover{
+    background: rgba(255, 254, 254, 0.5);
+    cursor: pointer;
+}
+.showword {
+    color: red;
+}
