@@ -60,7 +60,7 @@ $('.musicupper .bar .progress-bg').addEventListener('click',function(e){
 
 function getMUsicList(callback) {
     var xml = new XMLHttpRequest()
-    xml.open('GET','/musicPlayer/music.json',true)
+    xml.open('GET','/jirengu/musicPlayer/music.json',true)
     xml.addEventListener('load',function(){
         if(xml.status>=200&&xml.status<300||xml.status===304){
             console.log(JSON.parse(xml.responseText))
