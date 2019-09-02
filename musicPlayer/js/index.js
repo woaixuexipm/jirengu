@@ -7,6 +7,7 @@ getMUsicList(function(list){
     loadmusic(list[number])
     generatelist(list)
     change(list)
+    changemusic(list[number])
 })
 function $(selector){
     return document.querySelector(selector)
@@ -46,12 +47,14 @@ $('.musicbox .next').addEventListener('click',function(){
     $('.musicbox .control .play').classList.add('icon-playpause')
     number = (++number) % musiclist.length
     loadmusic(musiclist[number])
+    changemusic(musiclist[number])
 })
 $('.musicbox .back').addEventListener('click',function(){
     $('.musicbox .control .play').classList.remove('icon-play')
     $('.musicbox .control .play').classList.add('icon-playpause')
     number = (musiclist.length + (--number)) % musiclist.length
     loadmusic(musiclist[number])
+    changemusic(musiclist[number])
 })
 $('.musicupper .bar .progress-bg').addEventListener('click',function(e){
     var percent = e.offsetX / parseInt(getComputedStyle(this).width)
@@ -90,8 +93,10 @@ function generatelist(list){
         var aList = document.getElementsByTagName("li");
         aList[i].classList.add("play")
         aList[i].classList.add("iconfont")
-        aList[i].classList.add("icon-playpause")
+        aList[i].classList.add("icon-play")
     }
+    aList[0].classList.remove("icon-play")
+    aList[0].classList.add("icon-playpause")
 }
 function change(list) {
     var aList = document.getElementsByTagName("li");
@@ -104,5 +109,31 @@ function change(list) {
             audio.play()
             loadmusic(list[this.index])
         }
+    }
+}
+var listNode = document.getElementsByClassName('list')
+console.log(listNode[0])
+listNode[0].addEventListener('click', function (ev) {
+    var cur = ev.target
+    var allLi = this.children
+    for (var i =0; i<allLi.length; i++){
+        allLi[i].classList.add('icon-play')
+        allLi[i].classList.remove('icon-playpause')
+    }
+    if(cur.nodeName.toLocaleLowerCase() == 'li'){
+        cur.classList.remove('icon-play')
+        cur.classList.add('icon-playpause')
+    }
+})
+function changemusic(listobj){
+    var aList = document.getElementsByTagName("li");
+    var node = document.querySelector('.auther')
+    for(var i =0; i<aList.length; i++){
+        aList[i].classList.add('icon-play')
+        aList[i].classList.remove('icon-playpause')
+    }
+    if( node.innerText === listobj.auther){
+        aList[listobj.index].classList.remove('icon-play')
+        aList[listobj.index].classList.add('icon-playpause')
     }
 }
