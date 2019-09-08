@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="zuoye33-3.css">
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <div class="tab active">1</div>
+            <div class="tab">2</div>
+            <div class="tab">3</div>
+            <div class="tab">4</div>
+        </div>
+        <div class="content">
+            <div class="panel active">panel1</div>
+            <div class="panel">panel2</div>
+            <div class="panel">panel3</div>
+            <div class="panel">panel4</div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="header">
+            <div class="tab">1</div>
+            <div class="tab">2</div>
+            <div class="tab">3</div>
+            <div class="tab active">4</div>
+        </div>
+        <div class="content">
+            <div class="panel">panel1</div>
+            <div class="panel">panel2</div>
+            <div class="panel">panel3</div>
+            <div class="panel active">panel4</div>
+        </div>
+    </div>
+    <script>
+        $('.box .tab').on('click',function(){
+            $(this).addClass('active')
+            $(this).siblings().removeClass('active')
+            $(this).parents('.box').find('.panel').eq($(this).index()).addClass('active')
+            $(this).parents('.box').find('.panel').eq($(this).index()).siblings().removeClass('active')
+        })
+    </script>
+</body>
+</html>
