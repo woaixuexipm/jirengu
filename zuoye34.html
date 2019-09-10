@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1375821_wpedpu2gimm.css">
+    <style>
+        div {
+            margin: 20px;
+            color: red;
+        }
+        .iconfont {
+            font-size: 32px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="iconfont icon-playpause"></div>
+    <script>
+        $('div').on('click', function(){       
+            $(this).toggleClass('icon-playpause')
+            $(this).toggleClass('icon-play')   
+        })
+    </script>
+</body>
+</html>
