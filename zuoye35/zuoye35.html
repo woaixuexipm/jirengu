@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="zuoye35.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <h1>珠宝首饰</h1>
+        <ul class="content clearfix">
+            <li class="introduction">
+                <div class="cover"><a class="btn delete" href="">删除</a></div>
+                <img src="https://picsum.photos/200/200/?image=1" alt="">
+	            <div class="intr-name">黄金</div>
+	            <div class="intr-price">￥1000.00</div>
+            </li>
+            <li class="introduction">
+                <div class="cover"><a class="btn delete" href="">删除</a></div>
+                <img src="https://picsum.photos/200/200/?image=2" alt="">
+	            <div class="intr-name">铂金</div>
+	            <div class="intr-price">￥2000.00</div>
+            </li>
+            <li class="introduction">
+                <div class="cover"><a class="btn delete" href="">删除</a></div>
+                <img src="https://picsum.photos/200/200/?image=3" alt="">
+	            <div class="intr-name">玛瑙</div>
+	            <div class="intr-price">￥500.00</div>
+            </li>
+        </ul>
+        <a href="#" class="btn btn-add">添加</a>
+        <a href="#" class="btn btn-edit">编辑</a>
+    </div>
+    <script>
+        function gettext(introduction){
+            var html = ''
+            html += '<li class="introduction">';
+            html += '<div class="cover"><a class="btn delete" href="#">删除</a></div>'
+            html += '<img src="'+introduction.img+'" alt="">'
+            html += '<div class="intr-name">'+introduction.name+'</div>'
+            html += '<div class="intr-price">'+introduction.price+'</div>'
+            html += '</li>'
+            return html;
+        }
+        function getDate(){
+            var result = []
+            for(var i=0; i<3; i++){
+                var rand = Math.floor(Math.random()*100)
+                var product = {
+                    img: 'https://picsum.photos/200/200/?image='+rand,
+                    name: '珂兰 黄金手 猴哥款',
+                    price: '￥'+(rand*100)
+                }
+                result.push(product)
+            }
+            return result
+        }
+        $('.btn-add').on('click',function(e){
+            e.preventDefault();
+            $('introduction').removeClass('hover')
+            var product = getDate()
+            $.each(product, function(idx, introduction){
+                var html = gettext(introduction)
+                $('.content').append(html)
+            })
+        })
+        $('.btn-edit').on('click', function(e){
+            e.preventDefault()
+            $('.introduction').toggleClass('hover')
+        })
+        $('.content').on('click', '.delete', function(e){
+            e.preventDefault()
+            $(this).parents('.introduction').remove()
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+/*common css*/
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.layout {
+    width: 720px;
+    margin: 0px auto;
+}
+h1 {
+    color: #666;
+    font-size: 24px;
+    margin: 15px 5px;
+}
+.introduction {
+    position: relative;
+}
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0, 0.3);
+    transition: all 0.3s;
+    opacity: 0;
+}
+.introduction.hover .cover{
+    opacity: 1;
+}
+.cover .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.introduction.hover .cover {
+    opacity: 1;
+  }
+.introduction {
+    float: left;
+    width: calc(33.33% - 10px);
+    padding: 10px 15px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+}
+.intr-name {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+}
+.intr-price {
+    color: red;
+    font-size: 12px;
+}
+.btn {
+    display: inline-block;
+    border: 1px solid #c81623;
+    color: #c81623;
+    padding: 10px 15px;
+    border-radius: 3px;
+    text-align: center;
+    background: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 12px;
+}
