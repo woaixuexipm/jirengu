@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+    <title>modal</title>
+    <style>
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .bg {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            left: 0;
+            width: 1366px;
+            height: 610px;
+            background: #808080;
+            opacity: 0.5;
+            z-index: 1;
+        }
+        .content .message {
+            margin: 0;
+            display: none;
+            width: 300px;
+            border-radius: 10px;
+            padding: 20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+        }
+        .content .message p,
+        .content .message li {
+            font-size: 5px;
+        }
+        .content .active {
+            display: block;
+            background: #fff;
+            z-index: 2;
+        }
+        .content .close,
+        .content .yes {
+            margin:0 auto;
+            padding: 2px;
+            background: #E33100;
+            width: 50px;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .content .quxiao {
+            display: inline-block;
+            padding: 2px;
+            margin-left: 80px;
+        }
+        .content .queding {
+            display: inline-block;
+            padding: 2px;
+            margin-right: 80px;
+        }
+        a {
+            font-size: 5px;
+        }
+        a:hover {
+            color: red;
+        }
+        .modal .header {
+            background: #313030;
+            color: #fff;
+            width: 320px;
+            margin: 0 auto;
+            height: 20px;
+            padding: 10px 10px;
+            display: none;
+            position: absolute;
+            margin-left: -20px;
+            margin-top: -50px;
+        }
+        .modal .active {
+            display: block;
+            z-index: 10000;
+        }
+        .content .header h5 {
+            display: inline;
+        }
+        .content .header .no {
+            float: right;
+            display: inline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <div class="btns">
+            <button>打开1</button>
+            <button>打开2</button>
+            <button>打开3</button>
+            <button>打开4</button>
+            <button>打开5</button>
+            <button>关闭</button>
+        </div>
+        <div class="background "></div>
+        <div class="content">
+            <div class="message">
+                <p>hello, 这里是饥人谷</p>
+                <div class="close">取消</div>
+            </div>
+            <div class="message">
+                <a href="http://jirengu.com/">饥人谷</a>
+                <div class="close">取消</div>
+            </div>
+            
+            <div class="message">
+                <header class="header clearfix ">
+                    <h5>欢迎来到饥人谷</h5>
+                    <span class="no">x</span>
+                </header>
+                <p>hello</p>
+                <div class="quxiao close">取消</div>
+                <div class="queding yes">确定</div>
+            </div>
+            <div class="message">
+                <header class="header clearfix ">
+                    <h5>欢迎来到饥人谷</h5>
+                    <span class="no">x</span>
+                </header>
+                <ul>
+                    <li>列表1</li>
+                    <li>列表2</li>
+                    <li>列表3</li>
+                    <li>列表4</li>
+                </ul>
+                <div class="quxiao close">取消</div>
+                <div class="queding yes">确定</div>
+            </div>
+            <div class="message">
+                <header class="header clearfix ">
+                    <h5>欢迎来到饥人谷</h5>
+                    <span class="no">x</span>
+                </header>
+                <p>hello</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function modal($ct){
+            this.init($ct)
+            this.bind()
+        }
+        modal.prototype = {
+            init: function($ct){
+                this.$ct = $ct
+                this.$btn = this.$ct.find('button')
+                this.$bg = this.$ct.find('.background')
+                this.$content = this.$ct.find('.content')
+                this.$message = this.$ct.find('.message')
+                this.$close = this.$ct.find('.close')
+                this.$yes = this.$ct.find('.yes')
+                this.$no = this.$ct.find('.no')
+                this.$header = this.$ct.find('header')
+            },
+            bind: function(){
+                var _this = this
+                this.$btn.on('click',function(){
+                    _this.$bg.addClass('bg')
+                    _this.$message.eq($(this).index()).addClass('active')
+                    _this.$header.addClass('active')
+                })
+                this.$close.on('click',function(){
+                    if( $(this).index() === 2){
+                        alert('取消')
+                    }
+                    _this.$message.removeClass('active')
+                    _this.$bg.removeClass('bg')
+                    _this.$header.removeClass('active')
+                })
+                this.$yes.on('click',function(){
+                    alert('确定')
+                    _this.$message.removeClass('active')
+                    _this.$bg.removeClass('bg')
+                    _this.$header.removeClass('active')
+                })
+                this.$no.on('click',function(){
+                    alert('close')
+                    _this.$message.removeClass('active')
+                    _this.$bg.removeClass('bg')
+                    _this.$header.removeClass('active')
+                })
+            }
+        }
+        $.fn.Modal = function(){
+            $.each(this,function(index, node){
+                new modal($(node))
+            })
+        }
+        $('.modal').Modal()
+    </script>
+</body>
+</html>
